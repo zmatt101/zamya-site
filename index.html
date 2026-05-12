@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zamya — AI Receptionist for Ontario Dental Clinics</title>
-<meta name="description" content="Zamya is an AI receptionist for Ontario dental clinics. We help your front desk recover missed calls, capture patient requests, and protect the schedule.">
+<meta name="description" content="Zamya is a front-desk workflow support solution for Ontario dental clinics. We help your team recover missed calls, capture patient requests, and protect the schedule.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -52,7 +52,6 @@ body {
   .container { padding: 0 1.25rem; }
 }
 
-/* ========== Shared elements ========== */
 .eyebrow {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
@@ -166,9 +165,7 @@ footer .wordmark { font-size: 1.65rem; }
 
 .nav a:hover::after { transform: scaleX(1); }
 
-@media (max-width: 880px) {
-  .nav { display: none; }
-}
+@media (max-width: 880px) { .nav { display: none; } }
 
 /* ========== Buttons ========== */
 .btn {
@@ -208,6 +205,20 @@ footer .wordmark { font-size: 1.65rem; }
   background: transparent;
   border-color: var(--navy);
   box-shadow: 0 6px 20px -10px rgba(11, 37, 69, 0.18);
+}
+
+/* Elevated secondary — used for morning report CTA */
+.btn-secondary-strong {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  font-weight: 500;
+}
+
+.btn-secondary-strong:hover {
+  background: var(--navy);
+  color: var(--cream);
+  box-shadow: 0 6px 20px -8px rgba(11, 37, 69, 0.35);
 }
 
 .btn-inverse {
@@ -289,15 +300,129 @@ footer .wordmark { font-size: 1.65rem; }
   flex-shrink: 0;
 }
 
+/* ========== Monday Morning scenario ========== */
+.monday {
+  padding: 7rem 0;
+  border-top: 1px solid var(--rule);
+  background: var(--cream-dim);
+}
+
+.monday h2 { margin: 1.25rem 0 2.5rem; max-width: 720px; }
+
+.monday-scenario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  border-top: 1px solid var(--rule);
+  padding-top: 3rem;
+}
+
+.monday-left {}
+
+.monday-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.monday-list li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 1.02rem;
+  color: var(--ink);
+  line-height: 1.45;
+  align-items: start;
+}
+
+.monday-list li:first-child { padding-top: 0; }
+
+.monday-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.monday-close {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "opsz" 36, "SOFT" 30;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--navy);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+  font-style: italic;
+}
+
+.monday-right {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 2.25rem;
+  box-shadow: 0 8px 32px -16px rgba(11, 37, 69, 0.14);
+}
+
+.monday-right-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.monday-right-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "opsz" 36, "SOFT" 30;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--navy);
+  letter-spacing: -0.012em;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.monday-after-list {
+  list-style: none;
+}
+
+.monday-after-list li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 0.94rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.monday-after-list li:last-child { border-bottom: none; }
+
+.monday-check {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+@media (max-width: 800px) {
+  .monday-scenario { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
 /* ========== Pain section ========== */
 .pain { padding: 7rem 0; border-top: 1px solid var(--rule); }
 
 .pain h2 { margin: 1.25rem 0 1.5rem; max-width: 720px; }
 
-.pain-list {
-  list-style: none;
-  border-top: 1px solid var(--rule);
-}
+.pain-list { list-style: none; border-top: 1px solid var(--rule); }
 
 .pain-item {
   display: grid;
@@ -534,6 +659,14 @@ footer .wordmark { font-size: 1.65rem; }
 
 .report-section .lead { margin-bottom: 4.5rem; }
 
+.report-cta-row {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
 .morning-report {
   background: var(--paper);
   border: 1px solid var(--rule);
@@ -665,7 +798,7 @@ footer .wordmark { font-size: 1.65rem; }
   line-height: 1.2;
 }
 
-.badge-urgent { background: var(--navy); color: var(--cream); }
+.badge-priority { background: var(--navy); color: var(--cream); }
 .badge-new { background: var(--gold); color: var(--navy); }
 .badge-cancel {
   background: transparent;
@@ -831,6 +964,82 @@ footer .wordmark { font-size: 1.65rem; }
   .compare-col.right { padding: 2rem 1.5rem; margin: 0 -1.5rem; }
 }
 
+/* ========== Credibility ========== */
+.credibility {
+  padding: 5rem 0;
+  border-top: 1px solid var(--rule);
+  background: var(--cream);
+}
+
+.credibility-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.credibility-left {}
+
+.credibility-statement {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  line-height: 1.3;
+  letter-spacing: -0.018em;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+
+.credibility-body {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 500px;
+}
+
+.credibility-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.credibility-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.credibility-item:last-child { border-bottom: none; }
+
+.credibility-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+.credibility-item-title {
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.credibility-item-desc {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .credibility-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
 /* ========== ROI ========== */
 .roi { padding: 7rem 0; border-top: 1px solid var(--rule); background: var(--cream-dim); }
 
@@ -847,10 +1056,7 @@ footer .wordmark { font-size: 1.65rem; }
   max-width: 660px;
 }
 
-.roi-table {
-  border-top: 1px solid var(--rule);
-  margin-top: 1rem;
-}
+.roi-table { border-top: 1px solid var(--rule); margin-top: 1rem; }
 
 .roi-row {
   display: grid;
@@ -946,9 +1152,7 @@ footer .wordmark { font-size: 1.65rem; }
   color: var(--cream);
 }
 
-@media (max-width: 800px) {
-  .pilot-cards { grid-template-columns: 1fr; }
-}
+@media (max-width: 800px) { .pilot-cards { grid-template-columns: 1fr; } }
 
 .pilot-cta {
   display: flex;
@@ -1043,18 +1247,13 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
   letter-spacing: 0.005em;
 }
 
-@media (max-width: 800px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-}
-
-@media (max-width: 500px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-}
+@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
+@media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
 
 /* ========== Responsive section padding ========== */
 @media (max-width: 640px) {
   .hero { padding: 4rem 0 3.5rem; }
-  .pain, .stats, .how, .report-section, .compare, .roi, .pilot { padding: 5rem 0; }
+  .pain, .stats, .how, .report-section, .compare, .roi, .pilot, .monday, .credibility { padding: 5rem 0; }
   .pain h2, .stats h2, .how h2, .report-section h2, .compare h2, .pilot h2 { margin-bottom: 2.5rem; }
   .header-inner { padding: 0.95rem 0; }
 }
@@ -1084,11 +1283,11 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       <a href="#" class="wordmark">Zamya<span class="dot">.</span></a>
       <nav class="nav">
         <a href="#how">How it works</a>
-        <a href="#report">What you get</a>
+        <a href="#report">Morning report</a>
         <a href="#roi">ROI</a>
         <a href="#pilot">Pilot</a>
       </nav>
-      <a href="CALENDLY_LINK_HERE" class="btn btn-small">Book a Call</a>
+      <a href="https://calendly.com/zack-zamya/30min" class="btn btn-small">Book a Call</a>
     </div>
   </div>
 </header>
@@ -1098,20 +1297,52 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
   <div class="container">
     <div class="hero-inner">
       <span class="rule"></span>
-      <span class="eyebrow">AI Receptionist for Ontario Dental Clinics</span>
+      <span class="eyebrow">Front-Desk Workflow Support for Ontario Dental Clinics</span>
       <h1>Turn missed calls into booked patients, without adding front-desk staff.</h1>
       <p class="sub">Zamya answers the calls your clinic cannot get to, captures what each patient needs, and gives your team a clear morning action plan for callbacks, bookings, cancellations, and follow-ups.</p>
       <div class="hero-cta">
-        <a href="CALENDLY_LINK_HERE" class="btn">Book a 15-Minute Fit Call <span class="btn-arrow">→</span></a>
-        <a href="#report" class="btn btn-secondary">See a Sample Morning Report</a>
+        <a href="https://calendly.com/zack-zamya/30min" class="btn">Book a 15-Minute Fit Call <span class="btn-arrow">→</span></a>
+        <a href="#report" class="btn btn-secondary-strong">See a Sample Morning Report <span class="btn-arrow">→</span></a>
       </div>
       <div class="trust-strip">
         <span class="trust-item">Built for Ontario dental clinics</span>
         <span class="trust-item">PHIPA-conscious workflows</span>
         <span class="trust-item">Canadian-hosted infrastructure</span>
         <span class="trust-item">No major IT project required</span>
-        <span class="trust-item">Designed to support your team</span>
         <span class="trust-item">Your team stays in control of booking decisions</span>
+        <span class="trust-item">Built alongside 30 years of healthcare operations experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MONDAY MORNING SCENARIO -->
+<section class="monday">
+  <div class="container">
+    <span class="rule"></span>
+    <span class="eyebrow">A familiar situation</span>
+    <h2>A typical Monday morning.</h2>
+    <div class="monday-scenario">
+      <div class="monday-left">
+        <ul class="monday-list">
+          <li>8 voicemails waiting from the weekend — names, numbers, and reasons mixed together</li>
+          <li>2 cancellations from Friday afternoon that nobody had time to fill</li>
+          <li>3 new patient inquiries from Saturday evening, still uncontacted</li>
+          <li>Your front desk is already checking in the first patients of the day</li>
+          <li>The phone is ringing before the computer is logged in</li>
+        </ul>
+        <p class="monday-close">This is where patient opportunities start slipping through — not because of a lack of effort, but because there is simply not enough time in the first hour of the day.</p>
+      </div>
+      <div class="monday-right">
+        <div class="monday-right-label">With Zamya</div>
+        <div class="monday-right-title">Your team opens a single morning report instead.</div>
+        <ul class="monday-after-list">
+          <li><span class="monday-check">✓</span> Every overnight call captured and summarized</li>
+          <li><span class="monday-check">✓</span> Cancellations flagged with context, ready to action</li>
+          <li><span class="monday-check">✓</span> New patient requests organized and prioritized</li>
+          <li><span class="monday-check">✓</span> Suggested follow-up actions for each patient</li>
+          <li><span class="monday-check">✓</span> Delivered to your inbox before the clinic opens</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1123,7 +1354,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     <span class="rule"></span>
     <span class="eyebrow">Where your team feels it</span>
     <h2>Your front desk is doing more than answering phones.</h2>
-    <p class="lead">Calls don't pause for staffing constraints, lunch breaks, or busy mornings. Most clinics absorb the gap as a normal part of the day, even when it costs them bookings.</p>
+    <p class="lead">Calls do not pause for staffing constraints, lunch breaks, or busy mornings. Most clinics absorb the gap as a normal part of the day, even when it costs them patient opportunities.</p>
     <ol class="pain-list">
       <li class="pain-item">
         <div class="pain-num">01</div>
@@ -1135,29 +1366,29 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       <li class="pain-item">
         <div class="pain-num">02</div>
         <div>
-          <h3 class="pain-title">Voicemail piles up after lunch and after hours</h3>
-          <p class="pain-desc">The queue builds faster than your team can clear it. By the time anyone calls back, the patient has already moved on.</p>
+          <h3 class="pain-title">Voicemail accumulates after lunch and after hours</h3>
+          <p class="pain-desc">The queue builds faster than your team can clear it. By the time anyone calls back, the patient has often already moved on.</p>
         </div>
       </li>
       <li class="pain-item">
         <div class="pain-num">03</div>
         <div>
-          <h3 class="pain-title">Cancellation gaps are hard to refill quickly</h3>
-          <p class="pain-desc">When a slot opens up, you have hours — not days — to fill it. Without a fast follow-up loop, chair time goes to waste.</p>
+          <h3 class="pain-title">Cancellation gaps are difficult to fill quickly</h3>
+          <p class="pain-desc">When a slot opens up, the window to fill it is short. Without a fast follow-up process, chair time can go to waste.</p>
         </div>
       </li>
       <li class="pain-item">
         <div class="pain-num">04</div>
         <div>
-          <h3 class="pain-title">New patient inquiries sit too long</h3>
-          <p class="pain-desc">Most new patients call two or three clinics. The one that calls back first usually wins the booking.</p>
+          <h3 class="pain-title">New patient inquiries sit too long before a callback</h3>
+          <p class="pain-desc">Many new patients reach out to more than one clinic. The practice that responds first tends to book the appointment.</p>
         </div>
       </li>
       <li class="pain-item">
         <div class="pain-num">05</div>
         <div>
-          <h3 class="pain-title">Routine follow-up eats staff hours</h3>
-          <p class="pain-desc">Chasing confirmations, rescheduling, and triaging routine questions pulls your team away from in-office patient care.</p>
+          <h3 class="pain-title">Routine follow-up pulls staff away from in-office care</h3>
+          <p class="pain-desc">Chasing confirmations, rescheduling, and handling routine questions takes your team's attention away from the patients already in the chair.</p>
         </div>
       </li>
     </ol>
@@ -1169,8 +1400,8 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
   <div class="container">
     <span class="rule on-dark"></span>
     <span class="eyebrow on-dark">By the numbers</span>
-    <h2 class="on-dark">The hidden cost of missed calls.</h2>
-    <p class="lead on-dark">A missed call isn't a missed message. It's a missed patient — and most of them don't call twice.</p>
+    <h2 class="on-dark">The cost of missed calls is often underestimated.</h2>
+    <p class="lead on-dark">A missed call is often a missed patient opportunity — and most patients do not call back a second time.</p>
     <div class="stats-grid">
       <div class="stat">
         <div class="stat-num">35<span class="suffix">%</span></div>
@@ -1182,14 +1413,14 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       </div>
       <div class="stat">
         <div class="stat-num">1<span class="divider">/</span>7</div>
-        <p class="stat-desc">patients leave a voicemail</p>
+        <p class="stat-desc">patients leave a voicemail when they cannot reach your team</p>
       </div>
       <div class="stat">
         <div class="stat-num">2<span class="divider">/</span>3</div>
-        <p class="stat-desc">missed callers call a competitor</p>
+        <p class="stat-desc">missed callers contact another clinic instead</p>
       </div>
     </div>
-    <p class="stats-note">Industry benchmarks for North American dental and healthcare front-desk operations. Actual call leakage varies by clinic and patient mix.</p>
+    <p class="stats-note">Industry benchmarks for North American dental and healthcare front-desk operations. Actual call patterns vary by clinic, location, and patient mix.</p>
   </div>
 </section>
 
@@ -1198,34 +1429,34 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
   <div class="container">
     <span class="rule"></span>
     <span class="eyebrow">The workflow</span>
-    <h2>How Zamya turns missed calls into morning action.</h2>
+    <h2>How Zamya supports your front desk, step by step.</h2>
     <div class="flow">
       <div class="flow-line"></div>
       <div class="flow-grid">
         <div class="flow-step">
           <div class="flow-num">01</div>
-          <h3 class="flow-title">Patient calls after hours or a busy moment</h3>
-          <p class="flow-desc">Forwarded calls reach Zamya whenever your team can't pick up — evenings, weekends, lunch, or mid-rush.</p>
+          <h3 class="flow-title">Patient calls after hours or during a busy moment</h3>
+          <p class="flow-desc">Forwarded calls reach Zamya when your team cannot pick up — evenings, weekends, lunch, or during a busy stretch at the front desk.</p>
         </div>
         <div class="flow-step">
           <div class="flow-num">02</div>
           <h3 class="flow-title">Zamya answers and captures the request</h3>
-          <p class="flow-desc">A natural conversation collects patient name, reason for calling, urgency, and contact details.</p>
+          <p class="flow-desc">A natural conversation collects the patient's name, reason for calling, follow-up preference, and contact details.</p>
         </div>
         <div class="flow-step">
           <div class="flow-num">03</div>
-          <h3 class="flow-title">Requests are categorized by need</h3>
-          <p class="flow-desc">New patient, cancellation, urgent, routine inquiry — each call is tagged so your team knows what it's looking at.</p>
+          <h3 class="flow-title">Calls are organized by type and follow-up priority</h3>
+          <p class="flow-desc">New patient, cancellation, callback request, routine inquiry — each call is categorized so your team knows what it is looking at.</p>
         </div>
         <div class="flow-step">
           <div class="flow-num">04</div>
-          <h3 class="flow-title">Your team gets a prioritized morning plan</h3>
-          <p class="flow-desc">One clean report. Urgent first, then new patients, then everything else — with a suggested action for each.</p>
+          <h3 class="flow-title">Your team receives a prioritized morning plan</h3>
+          <p class="flow-desc">One clear report. Time-sensitive requests first, then new patients, then everything else — with a suggested action for each.</p>
         </div>
         <div class="flow-step">
           <div class="flow-num">05</div>
           <h3 class="flow-title">Staff follow up and protect the schedule</h3>
-          <p class="flow-desc">Your front desk works the list, books patients, and fills cancellation gaps — without digging through voicemail.</p>
+          <p class="flow-desc">Your front desk works through the list, books patients, and fills cancellation gaps — without digging through voicemail or piecing together notes.</p>
         </div>
       </div>
     </div>
@@ -1238,7 +1469,12 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     <span class="rule"></span>
     <span class="eyebrow">What your team receives each morning</span>
     <h2>A clear morning report. Not a stack of voicemails.</h2>
-    <p class="lead">Every morning your front desk opens a single summary: who called, why they called, how urgent it is, and what to do next. Below is a sample — built from the kind of overnight activity a typical clinic sees.</p>
+    <p class="lead">Every morning your front desk opens a single summary: who called, why they called, how soon to follow up, and what to do next. Below is a representative sample built from the kind of overnight activity a typical Ontario clinic sees.</p>
+
+    <div class="report-cta-row">
+      <a href="https://calendly.com/zack-zamya/30min" class="btn">Book a 15-Minute Fit Call <span class="btn-arrow">→</span></a>
+      <a href="#report" class="btn btn-secondary-strong">See a Sample Morning Report <span class="btn-arrow">→</span></a>
+    </div>
 
     <div class="morning-report" role="figure" aria-label="Sample Zamya morning report">
       <div class="report-header">
@@ -1263,7 +1499,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         </div>
         <div>
           <div class="summary-num">1</div>
-          <div class="summary-label">Urgent</div>
+          <div class="summary-label">Priority callback</div>
         </div>
         <div>
           <div class="summary-num">1</div>
@@ -1274,12 +1510,12 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       <div class="report-calls">
         <div class="call">
           <div class="call-meta">
-            <span class="badge badge-urgent">Urgent</span>
+            <span class="badge badge-priority">Priority Callback</span>
             <span class="call-time">7:42 PM</span>
           </div>
           <div>
-            <div class="call-patient">Patient: <strong>Robert C.</strong> · existing</div>
-            <div class="call-reason">Reports a lost filling and discomfort. Requested next available appointment.</div>
+            <div class="call-patient">Patient: <strong>Robert C.</strong> &middot; existing</div>
+            <div class="call-reason">Reports a lost filling and discomfort. Requested earliest available appointment.</div>
             <div class="call-action"><strong>Suggested action:</strong> Call first. Offer the earliest available appointment or follow clinic protocol.</div>
           </div>
         </div>
@@ -1290,7 +1526,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
             <span class="call-time">9:14 PM</span>
           </div>
           <div>
-            <div class="call-patient">Patient: <strong>Alicia M.</strong> · new</div>
+            <div class="call-patient">Patient: <strong>Alicia M.</strong> &middot; new</div>
             <div class="call-reason">Looking to book a cleaning and exam. Has employer benefits through Manulife.</div>
             <div class="call-action"><strong>Suggested action:</strong> Return call before 10 AM. Mid-week openings available Wednesday or Thursday.</div>
           </div>
@@ -1302,7 +1538,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
             <span class="call-time">10:31 PM</span>
           </div>
           <div>
-            <div class="call-patient">Patient: <strong>James T.</strong> · existing</div>
+            <div class="call-patient">Patient: <strong>James T.</strong> &middot; existing</div>
             <div class="call-reason">Cancelling Wednesday 2:00 PM cleaning. Wants to reschedule next week.</div>
             <div class="call-action"><strong>Suggested action:</strong> Offer 2:00 PM slot to short-notice waitlist. Reschedule James for following Tuesday.</div>
           </div>
@@ -1314,9 +1550,9 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
             <span class="call-time">11:08 PM</span>
           </div>
           <div>
-            <div class="call-patient">Patient: <strong>Priya S.</strong> · new</div>
-            <div class="call-reason">Moved from out of province. Looking for a family dentist. Two kids, ages 6 and 9.</div>
-            <div class="call-action"><strong>Suggested action:</strong> Return call today. Mention family block scheduling and new-patient intake.</div>
+            <div class="call-patient">Patient: <strong>Priya S.</strong> &middot; new</div>
+            <div class="call-reason">Moved from out of province. Looking for a family dentist. Two children, ages 6 and 9.</div>
+            <div class="call-action"><strong>Suggested action:</strong> Return call today. Mention family block scheduling and new-patient intake process.</div>
           </div>
         </div>
 
@@ -1326,16 +1562,16 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
             <span class="call-time">6:18 AM</span>
           </div>
           <div>
-            <div class="call-patient">Patient: <strong>Karen W.</strong> · existing</div>
+            <div class="call-patient">Patient: <strong>Karen W.</strong> &middot; existing</div>
             <div class="call-reason">Asking about Invisalign consultation pricing and timeline.</div>
-            <div class="call-action"><strong>Suggested action:</strong> Send pricing sheet by email. Brief follow-up call tomorrow.</div>
+            <div class="call-action"><strong>Suggested action:</strong> Send pricing information by email. Brief follow-up call tomorrow.</div>
           </div>
         </div>
       </div>
 
       <div class="report-footer">
-        <span><strong>Zamya</strong> · captured overnight, delivered before your day starts</span>
-        <span>Confidential · for clinic use only</span>
+        <span><strong>Zamya</strong> &middot; captured overnight, delivered before your day starts</span>
+        <span>Confidential &middot; for clinic use only</span>
       </div>
     </div>
   </div>
@@ -1355,7 +1591,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
           <li><span class="compare-mark">—</span> Records a message and forwards it on</li>
           <li><span class="compare-mark">—</span> Uses generic, non-dental scripts</li>
           <li><span class="compare-mark">—</span> No dental front-desk context</li>
-          <li><span class="compare-mark">—</span> Leaves prioritization to your staff</li>
+          <li><span class="compare-mark">—</span> Leaves follow-up prioritization to your staff</li>
           <li><span class="compare-mark">—</span> No support for cancellations or scheduling workflows</li>
         </ul>
       </div>
@@ -1363,12 +1599,49 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <div class="compare-label">Zamya</div>
         <div class="compare-title">Captures intent. Organizes the morning.</div>
         <ul class="compare-list">
-          <li><span class="compare-mark">✓</span> Captures patient intent and urgency, not just a name</li>
-          <li><span class="compare-mark">✓</span> Built around dental front-desk workflows</li>
-          <li><span class="compare-mark">✓</span> Categorizes calls: urgent, new patient, cancellation, inquiry</li>
+          <li><span class="compare-mark">✓</span> Captures patient intent and follow-up priority, not just a name</li>
+          <li><span class="compare-mark">✓</span> Built around Ontario dental front-desk workflows</li>
+          <li><span class="compare-mark">✓</span> Categorizes calls: priority callback, new patient, cancellation, inquiry</li>
           <li><span class="compare-mark">✓</span> Delivers a prioritized morning action plan</li>
-          <li><span class="compare-mark">✓</span> Helps protect the schedule and recover missed opportunities</li>
+          <li><span class="compare-mark">✓</span> Helps protect the schedule and recover missed patient opportunities</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="credibility">
+  <div class="container">
+    <div class="credibility-inner">
+      <div class="credibility-left">
+        <span class="rule"></span>
+        <span class="eyebrow">Built with operational experience</span>
+        <p class="credibility-statement">Designed alongside 30 years of healthcare operations experience.</p>
+        <p class="credibility-body">Zamya was built by a team with deep roots in clinical operations and healthcare management. The workflows, the language, and the morning report format were shaped by people who understand what a dental front desk actually looks like at 8:00 AM on a Monday.</p>
+      </div>
+      <div class="credibility-right">
+        <div class="credibility-item">
+          <div class="credibility-dot"></div>
+          <div>
+            <div class="credibility-item-title">Healthcare operations expertise</div>
+            <div class="credibility-item-desc">30 years of frontline clinical and administrative experience informing every workflow decision.</div>
+          </div>
+        </div>
+        <div class="credibility-item">
+          <div class="credibility-dot"></div>
+          <div>
+            <div class="credibility-item-title">Ontario-specific design</div>
+            <div class="credibility-item-desc">Built for Ontario dental clinics — PHIPA-conscious workflows, Canadian-hosted infrastructure, local context.</div>
+          </div>
+        </div>
+        <div class="credibility-item">
+          <div class="credibility-dot"></div>
+          <div>
+            <div class="credibility-item-title">Implementation focus</div>
+            <div class="credibility-item-desc">We handle setup, configuration, and ongoing support. Your team does not manage software — they work the morning report.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1379,16 +1652,16 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
   <div class="container">
     <span class="rule"></span>
     <span class="eyebrow">An illustrative example</span>
-    <h2>Even a few recovered patient opportunities can create meaningful monthly ROI.</h2>
-    <p class="lead">Many clinics estimate a new patient can represent roughly $1,000 or more in first-year value. Recover a handful of after-hours calls a month, and the math works in your favour.</p>
+    <h2>Recovering a handful of patient opportunities each month can create meaningful ROI.</h2>
+    <p class="lead">Many Ontario clinics estimate a new patient can represent roughly $1,000 or more in first-year value. Recover a few after-hours calls a month, and the math works in your favour.</p>
     <div class="roi-table">
       <div class="roi-row">
         <span class="roi-label">Recovered patient opportunities per month</span>
         <span class="roi-value">6</span>
       </div>
       <div class="roi-row">
-        <span class="roi-label">Estimated first-year value per patient</span>
-        <span class="roi-value">~$1,000 CAD</span>
+        <span class="roi-label">Estimated first-year value per patient (CAD, Ontario)</span>
+        <span class="roi-value">~$1,000</span>
       </div>
       <div class="roi-row">
         <span class="roi-label">Potential recovered monthly value</span>
@@ -1403,7 +1676,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <span class="roi-value">7x–10x</span>
       </div>
     </div>
-    <p class="roi-note">Illustrative example only. Actual recovery depends on your clinic's call volume, patient mix, and how quickly your team works the morning report. Not a guarantee of results.</p>
+    <p class="roi-note">Illustrative example only. Actual recovery depends on your clinic's call volume, patient mix, and how your team works the morning report. Not a guarantee of results.</p>
   </div>
 </section>
 
@@ -1411,12 +1684,12 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
 <section class="pilot" id="pilot">
   <div class="container">
     <span class="rule on-dark"></span>
-    <span class="eyebrow on-dark">Pilot program</span>
+    <span class="eyebrow on-dark">Ontario pilot program</span>
     <h2 class="on-dark">Join the Ontario dental clinic pilot.</h2>
-    <p class="pilot-sub">A focused 30-day pilot designed to help your clinic identify missed-call leakage, capture patient opportunities, and reduce front-desk pressure — without a long-term contract.</p>
+    <p class="pilot-sub">A focused pilot designed to help your clinic capture patient opportunities, reduce front-desk pressure, and see the morning report in action — without a long-term contract.</p>
     <div class="pilot-cards">
       <div class="pilot-card">
-        <div class="pilot-card-label">Implementation & setup</div>
+        <div class="pilot-card-label">Implementation and setup</div>
         <div class="pilot-card-value">$1,500–$2,000 CAD</div>
       </div>
       <div class="pilot-card">
@@ -1430,10 +1703,10 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     </div>
     <div class="pilot-cta">
       <div class="pilot-cta-row">
-        <a href="CALENDLY_LINK_HERE" class="btn btn-inverse">Book a 15-Minute Fit Call <span class="btn-arrow">→</span></a>
+        <a href="https://calendly.com/zack-zamya/30min" class="btn btn-inverse">Book a 15-Minute Fit Call <span class="btn-arrow">→</span></a>
         <a href="#report" class="btn btn-secondary">See a Sample Morning Report</a>
       </div>
-      <span class="pilot-meta">15 minutes. No pitch deck. We'll walk you through the morning report.</span>
+      <span class="pilot-meta">15 minutes. No pitch deck. We will walk you through the morning report and answer any questions about how it works in practice.</span>
     </div>
   </div>
 </section>
@@ -1444,23 +1717,24 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     <div class="footer-grid">
       <div class="footer-col">
         <a href="#" class="wordmark">Zamya<span class="dot">.</span></a>
-        <p class="footer-tagline">Front-desk support and call handling, built for Ontario dental clinics.</p>
+        <p class="footer-tagline">Front-desk workflow support for Ontario dental clinics.</p>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="https://zamya.ca">zamya.ca</a>
-        <a href="mailto:hello@zamya.ca">hello@zamya.ca</a>
+        <a href="mailto:zack@zamya.ca">zack@zamya.ca</a>
       </div>
       <div class="footer-col">
         <h4>Infrastructure</h4>
         <p>PHIPA-conscious workflows</p>
         <p>Canadian-hosted infrastructure</p>
         <p>Azure Canada Central</p>
+        <p>Ontario dental pilot program</p>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 Zamya Inc.</span>
-      <span>Toronto · Ontario · Canada</span>
+      <span>Toronto &middot; Ontario &middot; Canada</span>
     </div>
   </div>
 </footer>
