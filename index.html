@@ -487,6 +487,7 @@ footer .wordmark { font-size: 1.65rem; }
 .stat {
   padding: 2.75rem 1.75rem 0 0;
   border-right: 1px solid var(--rule-dark);
+  text-align: center;
 }
 
 .stat:last-child { border-right: none; padding-right: 0; }
@@ -503,6 +504,7 @@ footer .wordmark { font-size: 1.65rem; }
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .stat-num .suffix {
@@ -525,6 +527,7 @@ footer .wordmark { font-size: 1.65rem; }
   color: rgba(250, 246, 239, 0.7);
   line-height: 1.45;
   max-width: 220px;
+  margin: 0 auto;
 }
 
 .stats-note {
@@ -1307,10 +1310,29 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       <div class="trust-strip">
         <span class="trust-item">Built for Ontario dental clinics</span>
         <span class="trust-item">PHIPA-conscious workflows</span>
-        <span class="trust-item">Canadian-hosted infrastructure</span>
+        <span class="trust-item">No clinical data collected or stored</span>
         <span class="trust-item">No major IT project required</span>
         <span class="trust-item">Your team stays in control of booking decisions</span>
         <span class="trust-item">Built alongside 30 years of healthcare operations experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO CTA STRIP -->
+<section style="background:var(--navy);padding:2rem 0;border-top:1px solid rgba(250,246,239,0.08);">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:0.5rem;">Hear it for yourself</div>
+        <div style="font-family:'Fraunces',Georgia,serif;font-variation-settings:'opsz' 36,'SOFT' 30;font-weight:400;font-size:clamp(1.1rem,1.8vw,1.35rem);color:var(--cream);letter-spacing:-0.01em;line-height:1.3;">Call our demo line right now and hear exactly what your patients would experience after hours.</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.5rem;flex-shrink:0;flex-wrap:wrap;">
+        <a href="tel:+16479566148" style="display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 1.75rem;background:var(--gold);color:var(--navy);font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;letter-spacing:0.01em;border-radius:2px;text-decoration:none;transition:background 0.2s ease;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 11.5C14.5 11.78 14.438 12.065 14.306 12.342C14.174 12.619 14 12.875 13.772 13.113C13.394 13.527 12.977 13.723 12.534 13.723C12.366 13.723 12.191 13.685 12.023 13.602C11.848 13.519 11.68 13.408 11.52 13.261C11.003 12.793 10.521 12.19 10.052 11.436C9.576 10.682 9.156 9.858 8.807 8.963C8.451 8.068 8.178 7.117 7.996 6.117C7.814 5.117 7.724 4.145 7.724 3.2C7.724 2.779 7.8 2.381 7.952 2.025C8.104 1.662 8.346 1.334 8.689 1.054C9.094 0.72 9.534 0.556 10 0.556C10.168 0.556 10.336 0.591 10.49 0.661C10.65 0.731 10.796 0.843 10.914 1.004L12.87 3.73C12.988 3.884 13.073 4.031 13.132 4.17C13.191 4.302 13.226 4.434 13.226 4.554C13.226 4.708 13.184 4.862 13.1 5.009C13.023 5.156 12.911 5.31 12.765 5.457L12.17 6.082C12.107 6.145 12.079 6.222 12.079 6.313C12.079 6.362 12.086 6.411 12.1 6.453C12.121 6.502 12.142 6.537 12.156 6.579C12.268 6.789 12.394 6.985 12.534 7.167C12.674 7.35 12.814 7.539 12.968 7.728C13.45 8.281 13.954 8.799 14.479 9.282C14.5 9.366 14.5 9.45 14.5 9.534V11.5Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          +1 (647) 956-6148
+        </a>
+        <div style="font-size:0.8rem;color:rgba(250,246,239,0.55);max-width:200px;line-height:1.5;">No sales pitch. No sign-up. Just call and listen.</div>
       </div>
     </div>
   </div>
@@ -1632,7 +1654,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
           <div class="credibility-dot"></div>
           <div>
             <div class="credibility-item-title">Ontario-specific design</div>
-            <div class="credibility-item-desc">Built for Ontario dental clinics — PHIPA-conscious workflows, Canadian-hosted infrastructure, local context.</div>
+            <div class="credibility-item-desc">Built for Ontario dental clinics — PHIPA-conscious workflows, contact and scheduling data only, local context.</div>
           </div>
         </div>
         <div class="credibility-item">
@@ -1693,6 +1715,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <a href="#report" class="btn btn-secondary">See a Sample Morning Report</a>
       </div>
       <span class="pilot-meta">15 minutes. No pitch deck. We will walk you through the morning report and answer any questions about how it works in practice.</span>
+      <span class="pilot-meta" style="margin-top:0.5rem;">Or call our demo line anytime and hear it yourself: <a href="tel:+16479566148" style="color:var(--gold-soft);font-weight:500;">+1 (647) 956-6148</a></span>
     </div>
   </div>
 </section>
@@ -1713,8 +1736,8 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       <div class="footer-col">
         <h4>Infrastructure</h4>
         <p>PHIPA-conscious workflows</p>
-        <p>Canadian-hosted infrastructure</p>
-        <p>Azure Canada Central</p>
+        <p>Contact and scheduling data only</p>
+        <p>No clinical records collected</p>
         <p>Ontario dental pilot program</p>
       </div>
     </div>
