@@ -566,13 +566,6 @@ footer .wordmark { font-size: 1.65rem; }
 }
 .report-section h2 { margin: 1.25rem 0 1.5rem; max-width: 720px; }
 .report-section .lead { margin-bottom: 4.5rem; }
-.report-cta-row {
-  display: flex;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 3.5rem;
-}
 .morning-report {
   background: var(--paper);
   border: 1px solid var(--rule);
@@ -1028,6 +1021,39 @@ footer .wordmark { font-size: 1.65rem; }
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.45; transform: scale(0.82); }
 }
+/* ========== Back to top ========== */
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: var(--navy);
+  color: var(--cream);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  box-shadow: 0 6px 20px -8px rgba(11, 37, 69, 0.4);
+  z-index: 60;
+  text-decoration: none;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: var(--navy-soft); }
+.back-to-top svg { width: 16px; height: 16px; }
+@media (max-width: 640px) {
+  .back-to-top { bottom: 1rem; right: 1rem; width: 40px; height: 40px; }
+}
 /* ========== Footer ========== */
 footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid var(--rule); }
 .footer-grid {
@@ -1197,7 +1223,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       <p class="sub">Zamya answers the calls your clinic cannot get to, captures what each patient needs, and gives your team a clear morning action plan for callbacks, bookings, cancellations, and follow-ups.</p>
       <div class="hero-cta">
         <a href="https://calendly.com/zack-zamya/30min" class="btn">Book a 15-Minute Fit Call <span class="btn-arrow">→</span></a>
-        <a href="#report" class="btn btn-secondary-strong">See a Sample Morning Report <span class="btn-arrow">→</span></a>
+        <a href="#report" class="btn btn-secondary-strong">Preview what your team gets each morning <span class="btn-arrow">→</span></a>
       </div>
       <div class="trust-strip">
         <span class="trust-item">Ontario Pilot Program</span>
@@ -1246,7 +1272,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <div class="monday-right-label">With Zamya</div>
         <div class="monday-right-title">Your team opens a single morning report instead.</div>
         <ul class="monday-after-list">
-          <li><span class="monday-check">✓</span> Every overnight call captured and summarized</li>
+          <li><span class="monday-check">✓</span> Every after-hours call captured and summarized</li>
           <li><span class="monday-check">✓</span> Cancellations flagged with context, ready to action</li>
           <li><span class="monday-check">✓</span> New patient requests organized and prioritized</li>
           <li><span class="monday-check">✓</span> Suggested follow-up actions for each patient</li>
@@ -1290,13 +1316,6 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <div>
           <h3 class="pain-title">New patient inquiries sit too long before a callback</h3>
           <p class="pain-desc">Many new patients reach out to more than one clinic. The practice that responds first tends to book the appointment.</p>
-        </div>
-      </li>
-      <li class="pain-item">
-        <div class="pain-num">05</div>
-        <div>
-          <h3 class="pain-title">Routine follow-up pulls staff away from in-office care</h3>
-          <p class="pain-desc">Chasing confirmations, rescheduling, and handling routine questions takes your team's attention away from the patients already in the chair.</p>
         </div>
       </li>
     </ol>
@@ -1370,10 +1389,6 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     <span class="eyebrow">What your team receives each morning</span>
     <h2>A clear morning report. Not a stack of voicemails.</h2>
     <p class="lead">Every morning your front desk opens a single summary: who called, why they called, how soon to follow up, and what to do next. Below is a representative sample built from the kind of overnight activity a typical Ontario clinic sees.</p>
-    <div class="report-cta-row">
-      <a href="https://calendly.com/zack-zamya/30min" class="btn">Book a 15-Minute Fit Call <span class="btn-arrow">→</span></a>
-      <a href="#report" class="btn btn-secondary-strong">See a Sample Morning Report <span class="btn-arrow">→</span></a>
-    </div>
     <div class="morning-report" role="figure" aria-label="Sample Zamya morning report">
       <div class="report-header">
         <div>
@@ -1461,7 +1476,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         </div>
       </div>
       <div class="report-footer">
-        <span><strong>Zamya</strong> &middot; captured overnight, delivered before your day starts</span>
+        <span><strong>Zamya</strong> &middot; captured after-hours, delivered before your day starts</span>
         <span>Confidential &middot; for clinic use only</span>
       </div>
     </div>
@@ -1541,7 +1556,7 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     <span class="rule"></span>
     <span class="eyebrow">An illustrative example</span>
     <h2>Recovering a handful of patient opportunities each month can create meaningful ROI.</h2>
-    <p class="lead">A modest recovery rate — a few captured opportunities each month, with a realistic conversion to booked appointments — typically more than covers the monthly retainer for an Ontario clinic.</p>
+    <p class="lead">Recovering even 1–2 new patients each month covers Zamya's monthly fee several times over. The math below shows how.</p>
     <div class="roi-table">
       <div class="roi-row">
         <span class="roi-label">Recovered patient opportunities per month</span>
@@ -1552,15 +1567,15 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <span class="roi-value">40–50%</span>
       </div>
       <div class="roi-row">
-        <span class="roi-label">Net new patients per month</span>
+        <span class="roi-label">Net new patients acquired per month</span>
         <span class="roi-value">1.5–2</span>
       </div>
       <div class="roi-row">
-        <span class="roi-label">Estimated first-year value per patient (CAD, Ontario)</span>
+        <span class="roi-label">Estimated first-year value per new patient (CAD, Ontario)</span>
         <span class="roi-value">~$1,000</span>
       </div>
       <div class="roi-row">
-        <span class="roi-label">Potential recovered monthly value</span>
+        <span class="roi-label">First-year revenue acquired per month</span>
         <span class="roi-value">$1,500–$2,000 CAD</span>
       </div>
       <div class="roi-row">
@@ -1600,13 +1615,10 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     <span class="eyebrow">Legal</span>
     <h2>Privacy Policy</h2>
     <p class="privacy-effective">Effective May 20, 2026</p>
-
     <div class="privacy-content">
-
       <h3>About this policy</h3>
       <p>Zamya is a front-desk workflow support service for Ontario dental clinics, operated by Zack Mattin (sole proprietor) in the Greater Toronto Area, Ontario, Canada. This policy explains what personal information Zamya collects, how it is used, who it is shared with, and how you can ask us to access or delete it. It is written to align with the Personal Information Protection and Electronic Documents Act (PIPEDA) and applicable Ontario privacy law.</p>
       <p>If something in this policy is unclear, or you have a question about your information, contact us at <a href="mailto:zack@zamya.ca">zack@zamya.ca</a>.</p>
-
       <h3>Information we collect</h3>
       <p>We collect personal information from three sources:</p>
       <ul>
@@ -1615,7 +1627,6 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <li><strong>Website use.</strong> When you visit zamya.ca, our hosting provider logs your IP address and browser metadata. If we have analytics installed, the analytics tool may record anonymized page views and referral information.</li>
       </ul>
       <p>We do not collect, request, or store clinical health information through Zamya. Specifically, our voice agent is instructed not to capture health card numbers (OHIP or otherwise), insurance policy numbers, social insurance numbers, full dates of birth, medication lists, or clinical history.</p>
-
       <h3>How we use this information</h3>
       <ul>
         <li>To respond to consultation requests and schedule fit calls.</li>
@@ -1624,7 +1635,6 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <li>To comply with legal and tax obligations applicable to Zamya as a business.</li>
       </ul>
       <p>We do not sell personal information. We do not use personal information for advertising or marketing to third parties.</p>
-
       <h3>Service providers we share with</h3>
       <p>Zamya uses a small number of third-party technology providers ("sub-processors") to deliver the service. Each provider is bound by its own privacy and security commitments under contract, and only receives the information necessary for its role:</p>
       <ul>
@@ -1637,7 +1647,6 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <li><strong>Calendly</strong> — fit-call scheduling and booking form. Hosted in the United States.</li>
       </ul>
       <p>Because these providers are located in the United States, personal information is processed outside Canada and may be subject to lawful access requests by foreign governments and authorities under the laws of the country in which it is stored. By using the site, the demo line, or booking a consultation, you consent to this cross-border processing.</p>
-
       <h3>How long we keep your information</h3>
       <ul>
         <li><strong>Calendly bookings:</strong> retained for the life of the customer relationship and up to 24 months after the last interaction, then deleted on request or as part of routine cleanup.</li>
@@ -1645,7 +1654,6 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <li><strong>Website logs and analytics:</strong> retained for up to 12 months in anonymized form.</li>
         <li><strong>Business records (invoices, contracts, correspondence with paid clients):</strong> retained for at least 7 years to meet Canadian tax and recordkeeping requirements.</li>
       </ul>
-
       <h3>Your rights</h3>
       <p>Under PIPEDA you have the right to:</p>
       <ul>
@@ -1657,16 +1665,12 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
       </ul>
       <p>To exercise any of these rights, email <a href="mailto:zack@zamya.ca">zack@zamya.ca</a> with the subject line "Privacy Request." We respond to verified requests within 30 days.</p>
       <p>If you believe we have not handled your information properly, you may also file a complaint with the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener">priv.gc.ca</a>.</p>
-
       <h3>Security</h3>
       <p>We rely on the security controls of our sub-processors and apply reasonable safeguards to the information we hold directly, including access controls and encryption in transit. No system is perfectly secure; we cannot guarantee that personal information will never be accessed by an unauthorized party. If a security incident affects information we hold about you, we will notify you as required by law.</p>
-
       <h3>Children</h3>
       <p>Zamya is a business-to-business service for dental clinics. It is not directed at children and we do not knowingly collect personal information from anyone under 18. If a parent or guardian becomes aware that a child has provided information to Zamya, please contact us and we will delete it.</p>
-
       <h3>Changes to this policy</h3>
       <p>We may update this policy as the service evolves or as legal requirements change. When we make a material change, we will update the effective date at the top of this section. We encourage you to review this policy periodically.</p>
-
       <h3>Contact us</h3>
       <div class="privacy-contact">
         <p><strong>Zamya</strong> — operated by Zack Mattin, sole proprietor</p>
@@ -1674,7 +1678,6 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
         <p>Email: <a href="mailto:zack@zamya.ca">zack@zamya.ca</a></p>
         <p>Web: <a href="https://zamya.ca">zamya.ca</a></p>
       </div>
-
     </div>
   </div>
 </section>
@@ -1706,5 +1709,21 @@ footer { background: var(--cream); padding: 4.5rem 0 3rem; border-top: 1px solid
     </div>
   </div>
 </footer>
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</a>
+<script>
+  (function() {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    function onScroll() {
+      if (window.scrollY > 400) btn.classList.add('visible');
+      else btn.classList.remove('visible');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 </body>
 </html>
